@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>List Of requests</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body> 
+  
+<div class="container">
+  <center><h2>List Of User</h2>
+    <!-- <p><strong>ACCEPT</strong> OR <strong>DECLINE</strong> THE REQUEST</p> -->
+    </center>            
+    <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+          <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>OTP</th>
+        <th>Is_active..?</th>
+        <th>Created_at</th>
+        <th>updated_at  </th>
+      </tr>
+    </thead>
+    <tbody>
+       {% if alldata %}
+       {% for a in alldata %}
+      <tr>
+        <td><strong>{{a.id}}</strong></td>
+        <td><strong>{{a.username}}</strong></td>
+        <td>{{a.email}}</td>
+        <td>{{a.otp}}</td>
+        <td>{{a.is_active}}</td>
+        <td>{{a.created_at}}</td>
+        <td>{{a.updated_at}}</td>
+        <!-- <td>
+          <form action="" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{a.id}}">
+            <input type="submit" value="Accept">
+          </form>
+        </td>
+        <td>
+          <form action="" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{a.id}}">
+            <input type="submit" value="Decline">
+          </form>
+        </td> -->
+      </tr>
+      {% endfor %}
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
